@@ -48,7 +48,7 @@ type testServer struct {
 
 func (*testServer) Protocol() serverutil.Protocol { return serverutil.HTTP }
 func (s *testServer) UseSSL() bool                { return s.useSSL }
-func (s *testServer) Address() string             { return fmt.Sprintf("127.0.0.1:%d", s.port) }
+func (s *testServer) Address() string             { return fmt.Sprintf("0.0.0.0:%d", s.port) }
 func (s *testServer) TLSConfig() *tls.Config      { return s.tls }
 func (s *testServer) HandlePanic()                {}
 
